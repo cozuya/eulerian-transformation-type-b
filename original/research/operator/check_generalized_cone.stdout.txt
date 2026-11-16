@@ -1,0 +1,7 @@
+{
+  "arithmetic": "exact rational; Sturm and Sturm-Tarski",
+  "n_max": 16,
+  "larger_cone_basis_cases": 152,
+  "derangement_basis_cases": 152,
+  "all_identity_simple_root_and_common_interlacer_sign_checks_passed": true
+}

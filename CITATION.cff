@@ -1,0 +1,80 @@
+cff-version: 1.2.0
+message: "Please cite this proof using the metadata below and identify the commit consulted."
+title: "Real-Rootedness of the Type B Eulerian Transformation on the Cone P_n"
+type: software
+license: Apache-2.0
+authors:
+  - family-names: Ozols
+    given-names: Chris
+    website: "https://github.com/cozuya"
+url: "https://github.com/cozuya/eulerian-transformation-type-b"
+repository-code: "https://github.com/cozuya/eulerian-transformation-type-b"
+abstract: >-
+  A Lean-checked proof of the Eulerian-map part of Athanasiadis's Remark 7.2(b)
+  (On the real-rootedness of the Eulerian transformation): if B is the linear
+  map with B(t^m) = B_m(x), the type B Eulerian polynomial, then for every n
+  and every nonzero nonnegative c_0, ..., c_n the polynomial
+  B(sum_k c_k t^(n-k) (1+t)^k) has only real roots; it has degree n and all
+  roots are negative. Simple roots, interlacing of the basis images, the larger
+  cone and the derangement map are given only informally. By Chris Ozols, with
+  AI-assisted proof development and formalization; the Lean formalization was
+  written by Anthropic's Claude on top of the RealRooted library. Verified with
+  Lean 4.35.0, Mathlib v4.35.0 and RealRooted d667074, using only the standard
+  axioms propext, Classical.choice and Quot.sound. The remark reports the
+  statement as supported by computational evidence. Possible overlap with Liu
+  and Yan (Adv. in Appl. Math. 162, 2025) is unresolved. No claim of novelty,
+  first discovery, or historical priority.
+keywords:
+  - type B Eulerian polynomials
+  - Eulerian transformation
+  - real-rooted polynomials
+  - interlacing
+  - signed permutations
+  - Athanasiadis Remark 7.2
+  - Euler numerator
+  - Brändén
+  - Lean
+  - Mathlib
+  - RealRooted
+  - formal proof
+preferred-citation:
+  type: report
+  title: "Real-Rootedness of the Type B Eulerian Transformation on the Cone P_n"
+  authors:
+    - family-names: Ozols
+      given-names: Chris
+  url: "https://github.com/cozuya/eulerian-transformation-type-b"
+references:
+  - type: article
+    title: "On the real-rootedness of the Eulerian transformation"
+    authors:
+      - family-names: Athanasiadis
+        given-names: Christos A.
+    journal: "Journal of the London Mathematical Society"
+    doi: "10.1112/jlms.70083"
+    url: "https://arxiv.org/abs/2302.00754v5"
+  - type: article
+    title: "Some interlacing properties related to the Eulerian and derangement polynomials"
+    authors:
+      - family-names: Liu
+        given-names: Lily Li
+      - family-names: Yan
+        given-names: Xue
+    journal: "Advances in Applied Mathematics"
+    volume: 162
+    year: 2025
+    start: 102776
+    doi: "10.1016/j.aam.2024.102776"
+  - type: article
+    title: "On linear transformations preserving the Pólya frequency property"
+    authors:
+      - family-names: Brändén
+        given-names: Petter
+    journal: "Transactions of the American Mathematical Society"
+    volume: 358
+    year: 2006
+    url: "https://arxiv.org/abs/math/0403364"
+  - type: software
+    title: "RealRooted"
+    url: "https://github.com/PerAlexandersson/RealRooted"
+    commit: "d667074269bb822fa18ca9142a14fdd90734dd57"

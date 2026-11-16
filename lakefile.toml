@@ -1,0 +1,16 @@
+name = "TypeBEulerian"
+version = "0.1.0"
+defaultTargets = ["TypeBEulerian"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+autoImplicit = false
+
+[[require]]
+name = "RealRooted"
+git = "https://github.com/PerAlexandersson/RealRooted.git"
+rev = "d667074269bb822fa18ca9142a14fdd90734dd57"
+
+[[lean_lib]]
+name = "TypeBEulerian"

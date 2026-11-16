@@ -1,0 +1,209 @@
+{
+  "verification_exit_code": 0,
+  "status": "PASS",
+  "started_utc": "2026-11-16T00:06:32Z",
+  "finished_utc": "2026-11-16T00:10:49Z",
+  "repository_commit_at_run": null,
+  "tracked_worktree_dirty": null,
+  "identity_note": "Precommit verification is identified by source hashes; timestamps do not establish priority.",
+  "trust_note": "All audited theorems use only propext, Classical.choice and Quot.sound; they are checked by the Lean kernel, including the RealRooted lemmas they use.",
+  "toolchain": {
+    "lean_version": "4.35.0",
+    "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "lake_version": "5.0.0-src+eb6cafb",
+    "mathlib_tag": "v4.35.0",
+    "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "realrooted_commit": "d667074269bb822fa18ca9142a14fdd90734dd57",
+    "linux_x86_64": {
+      "url": "https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-linux.tar.zst",
+      "sha256": "7289597a44543246c9227b8cae501767e095ce17f6d448b95fc4a8dc97268f6d",
+      "directory": "lean-4.35.0-linux"
+    }
+  },
+  "source_sha256": {
+    ".gitignore": "e50104cef76833f8ad8641fb9cc2ec87c95b76d45c1423b491efc0f968abbade",
+    "TOOLCHAIN.json": "e41f0fb6ceaea82eac1a06495a52a0ca7f9f0d10ffc711f12668e3d52ef62cce",
+    "TypeBEulerian.lean": "834aa62f49799ddeaf36df2f2be7e51b777af254647852985a098859d43ee12b",
+    "TypeBEulerian/Basic.lean": "1b1330195cd17af4f0e600e34c29eb01d6cb8b0d2286cabbb01d051b691e2811",
+    "TypeBEulerian/CommonInterlacer.lean": "0df021f99156ea73060996668a349b416a5e499063a46571497d8c70ccbe689b",
+    "TypeBEulerian/EulerNumerator.lean": "bb3b658c598372d872037ec0fa75837388a0263dbdb03e5edbf35da699c433f8",
+    "TypeBEulerian/MainTheorem.lean": "ad586be63372ed680c58d8751736639fc268f4a6608aae50eabbabf45a013047",
+    "Verification.lean": "e8c38c6f70468e370ac8731159caa7b457dc43fbc3c502ac29f90e2f2d2bd9f3",
+    "lake-manifest.json": "9a1383cc4fa3847dbc54242b600b715a3aa9ced8a2a60294f418adfe9ac3cc37",
+    "lakefile.toml": "b512686b79be289175b3f36c392dcc069f47fcb44abe6b4aaa426fb560fb8207",
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "original/MANIFEST.sha256": "bbc8291d08a4326c46409a85c1f5b31f7ecc4250768f4e22fc0f0a02c36c0ddf",
+    "original/REPORT.md": "652a102f46f8db3ef3c68985111db7ddd525489e8db0bc92e5b6e731ddc3f7f2",
+    "original/requirements.txt": "bb4f8aebda388ffdedfb18af388a182858b7b7e3da32432152feb80b654c63a3",
+    "original/research/derangement/DB_OPERATOR_APPENDIX.md": "394556bc318e451bdd87b0b49cfe4f748ceb2e958f5f03784bb11a652554dbde",
+    "original/research/derangement/GENERAL_CONE_PROOF.md": "cf795caa33b9a51180410852e254540ba437666ff6f38ed20a7c404f1a926524",
+    "original/research/derangement/check_refined_cone.py": "5582317399dc12a307f0469d7c2fca07d4847957b804e9db40ae31012e6be96b",
+    "original/research/derangement/check_refined_cone_n14.json": "bae2cd610ae6ee555e796cfc34e6007f331e040656ed6a68c1bd15f4cd42ff43",
+    "original/research/operator/GENERALIZED_CONE.md": "e8dc46d6797c98cf18496fb052a8c0263ca8d6d0fde16a4c721bcbd47995cb6d",
+    "original/research/operator/PROOF.md": "93e498908eed7a3383aba550a7708b377c6500f77eb16d9f5a1a329c403a2176",
+    "original/research/operator/check_generalized_cone.py": "5b83e626d0a209df3889d93ab60abbd81faa1aa49ab17d1eeaf3e769a997ebdc",
+    "original/research/operator/check_generalized_cone.stdout.txt": "07d8b8f1ac5b34ada5d5a754a9360a925abf71174d85df7ba86dac8007501ba3",
+    "original/research/operator/check_operator.py": "03724f203778318b4100daf7964995a9a882550b269529f5429e5e7bd1e7f899",
+    "original/research/operator/check_operator.stdout.txt": "1ccd500da850e381b8b881368d041adf351c74c2919f9f5cebc6cdb07ccc55a6",
+    "original/research/refinement/common_a_interlacer.out": "bfcf1df86c21bf7c7216f05fe5da5ee854e98fd90b0a9a1d6e32fbc2b05afe27",
+    "original/research/refinement/common_a_interlacer.py": "3be1b9da31d9a79f52b24dba8493129827d90e94b21ff6e0e0c4a84ae3cc73e7",
+    "original/research/refinement/common_interlacer_proof.md": "7c4036f8979fc5399fb92686428fa42d1a90eda8d1745b9cb7fe1ee879ac4a65",
+    "original/research/refinement/identity_and_sign_check.out": "3f257344de5c0e9484c09c3b4254360b2d9fc2bea850e51adb489021a262490d",
+    "original/research/refinement/identity_and_sign_check.py": "8f7bf56d14a7fd17cb1d920026828469b804e5b691e165b3250a17334c5cd08e",
+    "original/research/refinement/ptype_expansion.out": "4db9ae9054a4c798d27bd558844e69f4016f170acb568a8b39d3a265fa7945f6",
+    "original/research/refinement/ptype_expansion.py": "05f513e6374d88057ceedfcda96dfa581c58d22dbc1f647d9121f609e957f106",
+    "original/research/root/LIFT_LEMMA.md": "eed6d5e89e00badb24a71a61461fee55eb384bcad3e61c335156b4f36fe9c276",
+    "original/research/root/check_sympy_independent.py": "cc8c35a2f83b4f6bab2e5babcb16a2f2d61a6c129e38785b4cf77fe824f3039d",
+    "original/research/root/logs/check_sympy_independent.json": "5a594842976d8ad5d0668c948a319e381aec993ded7be37bc3a2c86dff0b8819",
+    "original/research/root/logs/checker_development.txt": "a9fb86249b8c2eaf7ad1a3dba18e7c06a0cb3a39598dee96ec1406a89b4349bb",
+    "original/research/root/logs/packet_probe_n18.txt": "d0469b37156a7173c6e9ae6ee202a958e2e4e996170fab6c70d3c6b4a232ad29",
+    "original/research/type-b-eulerian-packet/code/eul.py": "a319343141aa4d45925ee5b23c31773b7b1a0d0d9888338960819f926ec9b731",
+    "original/research/type-b-eulerian-packet/code/typeB_conjecture_probe.py": "2b06342f780164c5fddadb609fb421b9f840497557fe005e35d80f0850235ced",
+    "original/research/type-b-eulerian-packet/outputs/typeB_conjecture_probe_n18.txt": "6022aee1b3797fb91d3750ab5610982db4a73ba2625282567c2a1936777596b3",
+    "scripts/audit.py": "bcb9f50d2ade3733163c734695a66080498f8e48be326b976a13545fb7fa8a94",
+    "scripts/check-package.py": "1067b7745d6b14e42c3137bb6afa11c054fbb68ddc8ad2b7ce3899b3b8088dec",
+    "scripts/fetch-deps.sh": "643a0f631cebf7a21fc4f5ca50987c39902a2230b8a307db1c8c0986c1db0b54",
+    "scripts/install-lean.sh": "38c6e63f9a8829ab30f8df44e38f3c3953b1f3607cf04d1b0a6d08623a5272da",
+    "verify.sh": "168dd130931eda832afa48ada798f51b81d6cd8e7c00e59396a0fc101336f86d"
+  },
+  "audited_theorems": [
+    "TypeBEulerian.b_eval_mul_derivative_nonpos",
+    "TypeBEulerian.mathcalB_coneInput_n_zero",
+    "TypeBEulerian.mathcalB_coneInput_realRooted",
+    "TypeBEulerian.mathcalB_coneInput_splits",
+    "TypeBEulerian.mathcalB_coneInput_zero",
+    "TypeBEulerianVerification.basis_image",
+    "TypeBEulerianVerification.degree_zero",
+    "TypeBEulerianVerification.map_exists",
+    "TypeBEulerianVerification.real_rooted",
+    "TypeBEulerianVerification.real_rooted_strong",
+    "TypeBEulerianVerification.sequence_exists",
+    "TypeBEulerianVerification.zero_vector"
+  ],
+  "expected_axioms": {
+    "TypeBEulerian.b_eval_mul_derivative_nonpos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.mathcalB_coneInput_n_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.mathcalB_coneInput_realRooted": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.mathcalB_coneInput_splits": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.mathcalB_coneInput_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.basis_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.degree_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.map_exists": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.real_rooted": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.real_rooted_strong": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.sequence_exists": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.zero_vector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "axiom_dependencies": {
+    "TypeBEulerianVerification.real_rooted": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.real_rooted_strong": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.zero_vector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.degree_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.basis_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.sequence_exists": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerianVerification.map_exists": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.mathcalB_coneInput_splits": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.mathcalB_coneInput_realRooted": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.mathcalB_coneInput_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.mathcalB_coneInput_n_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "TypeBEulerian.b_eval_mul_derivative_nonpos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "transcript": "verification.log",
+  "theorem_types_and_axioms": "kernel-check.log"
+}

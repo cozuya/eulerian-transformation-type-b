@@ -1,0 +1,14 @@
+n=0: 1 refined generating identities, 1 basis identities, 0 common-interlacer and root-count checks passed
+n=1: 2 refined generating identities, 2 basis identities, 0 common-interlacer and root-count checks passed
+n=2: 3 refined generating identities, 3 basis identities, 3 common-interlacer and root-count checks passed
+n=3: 4 refined generating identities, 4 basis identities, 4 common-interlacer and root-count checks passed
+n=4: 5 refined generating identities, 5 basis identities, 5 common-interlacer and root-count checks passed
+n=5: 6 refined generating identities, 6 basis identities, 6 common-interlacer and root-count checks passed
+n=6: 7 refined generating identities, 7 basis identities, 7 common-interlacer and root-count checks passed
+n=7: 8 refined generating identities, 8 basis identities, 8 common-interlacer and root-count checks passed
+n=8: 9 refined generating identities, 9 basis identities, 9 common-interlacer and root-count checks passed
+n=9: 10 refined generating identities, 10 basis identities, 10 common-interlacer and root-count checks passed
+n=10: 11 refined generating identities, 11 basis identities, 11 common-interlacer and root-count checks passed
+n=11: 12 refined generating identities, 12 basis identities, 12 common-interlacer and root-count checks passed
+n=12: 13 refined generating identities, 13 basis identities, 13 common-interlacer and root-count checks passed
+PASS totals: refined_generating_identities=91; basis_identities=91; sign_and_root_count_checks=88

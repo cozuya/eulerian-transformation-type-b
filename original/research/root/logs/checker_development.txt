@@ -1,0 +1,17 @@
+The first run of check_sympy_independent.py stopped at its first comparison,
+n=0,j=0, before any mathematical check was recorded as passed:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/270385060cc4/research/root/check_sympy_independent.py", line 40, in <module>
+    assert p == expansion
+           ^^^^^^^^^^^^^^
+AssertionError
+
+Cause: SymPy polynomial-object equality distinguishes coefficient domains.
+The finite-difference numerator was Poly(1,x,domain='QQ'); the expansion was
+Poly(1,x,domain='ZZ'). A diagnostic printed:
+{'p': "Poly(1, x, domain='QQ')", 'q': "Poly(1, x, domain='ZZ')", 'polynomial_object_equality': False, 'zero_difference': True}
+
+Correction: explicitly create the expansion over QQ as well. No mathematical
+formula or assertion was weakened. The final script and complete successful
+output are included separately.

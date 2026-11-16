@@ -1,0 +1,595 @@
+
+$ date -u +%Y-%m-%dT%H:%M:%SZ
+2026-11-16T00:06:32Z
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ lean --version
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ lean --githash
+eb6cafb7290e8bd5f2937522d8d804f58f02bafc
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ lake --version
+Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ cat lean-toolchain
+leanprover/lean4:v4.35.0
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ git -C .lake/packages/mathlib rev-parse HEAD
+56a005855ea17e0b0958f73ec801ae140b0a1679
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ git -C .lake/packages/RealRooted rev-parse HEAD
+d667074269bb822fa18ca9142a14fdd90734dd57
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ python3 scripts/audit.py pins
+PASS: Lean, Lake, toolchain file, RealRooted, mathlib, and every locked dependency agree.
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ python3 scripts/audit.py sources
+PASS: 6 Lean files; no sorry, admit, axiom declarations, native_decide, unsafe code, implemented_by, extern, csimp, kernel-check options, attributes, instances, notation, or macros.
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ python3 scripts/check-package.py --sources-only
+PASS: package inventory, 44 source hashes, 68 local links, and 251 math segments free of macros GitHub rejects.
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ sha256sum --check SOURCE_SHA256SUMS
+.gitignore: OK
+TOOLCHAIN.json: OK
+TypeBEulerian.lean: OK
+TypeBEulerian/Basic.lean: OK
+TypeBEulerian/CommonInterlacer.lean: OK
+TypeBEulerian/EulerNumerator.lean: OK
+TypeBEulerian/MainTheorem.lean: OK
+Verification.lean: OK
+lake-manifest.json: OK
+lakefile.toml: OK
+lean-toolchain: OK
+original/MANIFEST.sha256: OK
+original/REPORT.md: OK
+original/requirements.txt: OK
+original/research/derangement/DB_OPERATOR_APPENDIX.md: OK
+original/research/derangement/GENERAL_CONE_PROOF.md: OK
+original/research/derangement/check_refined_cone.py: OK
+original/research/derangement/check_refined_cone_n14.json: OK
+original/research/operator/GENERALIZED_CONE.md: OK
+original/research/operator/PROOF.md: OK
+original/research/operator/check_generalized_cone.py: OK
+original/research/operator/check_generalized_cone.stdout.txt: OK
+original/research/operator/check_operator.py: OK
+original/research/operator/check_operator.stdout.txt: OK
+original/research/refinement/common_a_interlacer.out: OK
+original/research/refinement/common_a_interlacer.py: OK
+original/research/refinement/common_interlacer_proof.md: OK
+original/research/refinement/identity_and_sign_check.out: OK
+original/research/refinement/identity_and_sign_check.py: OK
+original/research/refinement/ptype_expansion.out: OK
+original/research/refinement/ptype_expansion.py: OK
+original/research/root/LIFT_LEMMA.md: OK
+original/research/root/check_sympy_independent.py: OK
+original/research/root/logs/check_sympy_independent.json: OK
+original/research/root/logs/checker_development.txt: OK
+original/research/root/logs/packet_probe_n18.txt: OK
+original/research/type-b-eulerian-packet/code/eul.py: OK
+original/research/type-b-eulerian-packet/code/typeB_conjecture_probe.py: OK
+original/research/type-b-eulerian-packet/outputs/typeB_conjecture_probe_n18.txt: OK
+scripts/audit.py: OK
+scripts/check-package.py: OK
+scripts/fetch-deps.sh: OK
+scripts/install-lean.sh: OK
+verify.sh: OK
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ python3 scripts/audit.py hashes
+e50104cef76833f8ad8641fb9cc2ec87c95b76d45c1423b491efc0f968abbade .gitignore
+e41f0fb6ceaea82eac1a06495a52a0ca7f9f0d10ffc711f12668e3d52ef62cce TOOLCHAIN.json
+834aa62f49799ddeaf36df2f2be7e51b777af254647852985a098859d43ee12b TypeBEulerian.lean
+1b1330195cd17af4f0e600e34c29eb01d6cb8b0d2286cabbb01d051b691e2811 TypeBEulerian/Basic.lean
+0df021f99156ea73060996668a349b416a5e499063a46571497d8c70ccbe689b TypeBEulerian/CommonInterlacer.lean
+bb3b658c598372d872037ec0fa75837388a0263dbdb03e5edbf35da699c433f8 TypeBEulerian/EulerNumerator.lean
+ad586be63372ed680c58d8751736639fc268f4a6608aae50eabbabf45a013047 TypeBEulerian/MainTheorem.lean
+e8c38c6f70468e370ac8731159caa7b457dc43fbc3c502ac29f90e2f2d2bd9f3 Verification.lean
+9a1383cc4fa3847dbc54242b600b715a3aa9ced8a2a60294f418adfe9ac3cc37 lake-manifest.json
+b512686b79be289175b3f36c392dcc069f47fcb44abe6b4aaa426fb560fb8207 lakefile.toml
+ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c lean-toolchain
+bbc8291d08a4326c46409a85c1f5b31f7ecc4250768f4e22fc0f0a02c36c0ddf original/MANIFEST.sha256
+652a102f46f8db3ef3c68985111db7ddd525489e8db0bc92e5b6e731ddc3f7f2 original/REPORT.md
+bb4f8aebda388ffdedfb18af388a182858b7b7e3da32432152feb80b654c63a3 original/requirements.txt
+394556bc318e451bdd87b0b49cfe4f748ceb2e958f5f03784bb11a652554dbde original/research/derangement/DB_OPERATOR_APPENDIX.md
+cf795caa33b9a51180410852e254540ba437666ff6f38ed20a7c404f1a926524 original/research/derangement/GENERAL_CONE_PROOF.md
+5582317399dc12a307f0469d7c2fca07d4847957b804e9db40ae31012e6be96b original/research/derangement/check_refined_cone.py
+bae2cd610ae6ee555e796cfc34e6007f331e040656ed6a68c1bd15f4cd42ff43 original/research/derangement/check_refined_cone_n14.json
+e8dc46d6797c98cf18496fb052a8c0263ca8d6d0fde16a4c721bcbd47995cb6d original/research/operator/GENERALIZED_CONE.md
+93e498908eed7a3383aba550a7708b377c6500f77eb16d9f5a1a329c403a2176 original/research/operator/PROOF.md
+5b83e626d0a209df3889d93ab60abbd81faa1aa49ab17d1eeaf3e769a997ebdc original/research/operator/check_generalized_cone.py
+07d8b8f1ac5b34ada5d5a754a9360a925abf71174d85df7ba86dac8007501ba3 original/research/operator/check_generalized_cone.stdout.txt
+03724f203778318b4100daf7964995a9a882550b269529f5429e5e7bd1e7f899 original/research/operator/check_operator.py
+1ccd500da850e381b8b881368d041adf351c74c2919f9f5cebc6cdb07ccc55a6 original/research/operator/check_operator.stdout.txt
+bfcf1df86c21bf7c7216f05fe5da5ee854e98fd90b0a9a1d6e32fbc2b05afe27 original/research/refinement/common_a_interlacer.out
+3be1b9da31d9a79f52b24dba8493129827d90e94b21ff6e0e0c4a84ae3cc73e7 original/research/refinement/common_a_interlacer.py
+7c4036f8979fc5399fb92686428fa42d1a90eda8d1745b9cb7fe1ee879ac4a65 original/research/refinement/common_interlacer_proof.md
+3f257344de5c0e9484c09c3b4254360b2d9fc2bea850e51adb489021a262490d original/research/refinement/identity_and_sign_check.out
+8f7bf56d14a7fd17cb1d920026828469b804e5b691e165b3250a17334c5cd08e original/research/refinement/identity_and_sign_check.py
+4db9ae9054a4c798d27bd558844e69f4016f170acb568a8b39d3a265fa7945f6 original/research/refinement/ptype_expansion.out
+05f513e6374d88057ceedfcda96dfa581c58d22dbc1f647d9121f609e957f106 original/research/refinement/ptype_expansion.py
+eed6d5e89e00badb24a71a61461fee55eb384bcad3e61c335156b4f36fe9c276 original/research/root/LIFT_LEMMA.md
+cc8c35a2f83b4f6bab2e5babcb16a2f2d61a6c129e38785b4cf77fe824f3039d original/research/root/check_sympy_independent.py
+5a594842976d8ad5d0668c948a319e381aec993ded7be37bc3a2c86dff0b8819 original/research/root/logs/check_sympy_independent.json
+a9fb86249b8c2eaf7ad1a3dba18e7c06a0cb3a39598dee96ec1406a89b4349bb original/research/root/logs/checker_development.txt
+d0469b37156a7173c6e9ae6ee202a958e2e4e996170fab6c70d3c6b4a232ad29 original/research/root/logs/packet_probe_n18.txt
+a319343141aa4d45925ee5b23c31773b7b1a0d0d9888338960819f926ec9b731 original/research/type-b-eulerian-packet/code/eul.py
+2b06342f780164c5fddadb609fb421b9f840497557fe005e35d80f0850235ced original/research/type-b-eulerian-packet/code/typeB_conjecture_probe.py
+6022aee1b3797fb91d3750ab5610982db4a73ba2625282567c2a1936777596b3 original/research/type-b-eulerian-packet/outputs/typeB_conjecture_probe_n18.txt
+bcb9f50d2ade3733163c734695a66080498f8e48be326b976a13545fb7fa8a94 scripts/audit.py
+1067b7745d6b14e42c3137bb6afa11c054fbb68ddc8ad2b7ce3899b3b8088dec scripts/check-package.py
+643a0f631cebf7a21fc4f5ca50987c39902a2230b8a307db1c8c0986c1db0b54 scripts/fetch-deps.sh
+38c6e63f9a8829ab30f8df44e38f3c3953b1f3607cf04d1b0a6d08623a5272da scripts/install-lean.sh
+168dd130931eda832afa48ada798f51b81d6cd8e7c00e59396a0fc101336f86d verify.sh
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ rm -rf .lake/build
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ lake build TypeBEulerian
+✔ [3950/4077] Built RealRooted.Mathlib.Algebra.Polynomial.Roots (2.2s)
+✔ [4022/4189] Built RealRooted.Mathlib.Data.Nat.Cast.Basic (2.0s)
+✔ [4266/4430] Built RealRooted.Mathlib.Data.List.Basic (2.3s)
+✔ [4326/4493] Built RealRooted.Mathlib.Algebra.Polynomial.Eval.Defs (2.5s)
+✔ [4397/4559] Built RealRooted.Mathlib.Data.List.Destutter (2.5s)
+✔ [4467/4662] Built RealRooted.Mathlib.Algebra.Polynomial.Basic (2.6s)
+✔ [4468/4662] Built RealRooted.Mathlib.Data.Fin.Basic (2.6s)
+✔ [4635/4813] Built RealRooted.Mathlib.Data.List.Interleave (3.1s)
+✔ [4718/4938] Built RealRooted.Mathlib.Algebra.Polynomial.Degree.Lemmas (2.9s)
+✔ [4849/5081] Built RealRooted.Mathlib.Algebra.Polynomial.Degree.Operations (3.2s)
+✔ [5168/5374] Built RealRooted.Mathlib.Algebra.QuadraticDiscriminant (3.3s)
+✔ [5284/5460] Built RealRooted.Mathlib.Analysis.Calculus.LocalExtr.Polynomial (3.6s)
+✔ [5710/5900] Built RealRooted.DerivativeRecurrence.Degree (4.0s)
+✔ [5711/5900] Built RealRooted.Mathlib.LinearAlgebra.Vandermonde (3.6s)
+✔ [5807/6055] Built RealRooted.RootCountFinite (4.0s)
+✔ [6434/6654] Built RealRooted.Mathlib.LinearAlgebra.Matrix.Determinant.Basic (4.3s)
+✔ [6630/6818] Built RealRooted.Mathlib.Analysis.SpecialFunctions.ExpIntegral (4.4s)
+✔ [6860/7067] Built RealRooted.Mathlib.Algebra.Polynomial.Splits (4.0s)
+✔ [7092/7273] Built RealRooted.Mathlib.Data.List.OfFn (2.3s)
+✔ [7337/7539] Built RealRooted.Mathlib.Algebra.Ring.Parity (5.1s)
+✔ [7461/7663] Built RealRooted.Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic (5.2s)
+✔ [7589/7768] Built RealRooted.Mathlib.Algebra.Polynomial.Derivative (5.5s)
+✔ [8403/8644] Built RealRooted.ASWKarlinThreshold (5.9s)
+✔ [8719/8947] Built RealRooted.DerivativeRecurrence.QuadraticDegree (2.3s)
+✔ [9070/9226] Built RealRooted.Mathlib.LinearAlgebra.Matrix.TotallyNonneg (2.2s)
+✔ [9071/9269] Built RealRooted.Mathlib.Data.Nat.Choose.Cast (7.5s)
+✔ [9072/9269] Built RealRooted.Mathlib.LinearAlgebra.Matrix.Determinant.CauchyBinet (2.9s)
+✔ [9073/9269] Built RealRooted.Recurrence.RowModel (758ms)
+✔ [9074/9274] Built RealRooted.Mathlib.LinearAlgebra.Matrix.Determinant.Integral (4.2s)
+✔ [9076/9274] Built RealRooted.Tactic.Row.Registry (2.2s)
+✔ [9077/9274] Built RealRooted.Tactic.Row.Routes (2.1s)
+✔ [9078/9274] Built RealRooted.Tactic.Attr (2.2s)
+✔ [9079/9290] Built RealRooted.Tactic.Ring (2.4s)
+✔ [9080/9319] Built RealRooted.Mathlib.Algebra.Polynomial.FieldDivision (3.4s)
+✔ [9081/9319] Built RealRooted.Mathlib.Algebra.Polynomial.Splits.Derivative (3.4s)
+✔ [9082/9319] Built RealRooted.Mathlib.Algebra.Polynomial.Coeff (3.6s)
+✔ [9083/9319] Built RealRooted.Mathlib.RingTheory.Polynomial.Wronskian (4.5s)
+✔ [9084/9326] Built RealRooted.RootPolynomial (3.8s)
+✔ [9085/9356] Built RealRooted.Mathlib.LinearAlgebra.Matrix.SignRegular (4.6s)
+✔ [9086/9367] Built RealRooted.Mathlib.Algebra.Polynomial.Reverse (6.2s)
+✔ [9087/9367] Built RealRooted.Mathlib.Algebra.Order.BigOperators.Ring.Multiset (4.8s)
+✔ [9088/9371] Built RealRooted.DerivativeRecurrence.SecondOrderODE (5.1s)
+✔ [9089/9371] Built RealRooted.Mathlib.Algebra.LinearRecurrence.Annihilator (4.3s)
+✔ [9090/9374] Built RealRooted.Mathlib.Algebra.Polynomial.Splits.Complex (5.3s)
+✔ [9091/9375] Built RealRooted.EulerOperator.Shift (7.2s)
+✔ [9092/9375] Built RealRooted.ThreeTermRecurrence.Degree (7.3s)
+✔ [9093/9376] Built RealRooted.Mathlib.Algebra.Polynomial.BasisTransform (8.0s)
+✔ [9094/9376] Built RealRooted.Mathlib.Algebra.Polynomial.Homogenize (6.5s)
+✔ [9095/9378] Built RealRooted.Basic.RootLists (8.6s)
+✔ [9096/9380] Built RealRooted.Mathlib.Algebra.Group.ForwardDiff (7.7s)
+✔ [9097/9381] Built RealRooted.Basic.Coefficients (9.1s)
+✔ [9098/9382] Built RealRooted.Basic.PolynomialFacts (8.7s)
+✔ [9099/9382] Built RealRooted.Mathlib.Algebra.Polynomial.Bezoutian (10s)
+✔ [9100/9383] Built RealRooted.Mathlib.Algebra.MvPolynomial.EvalOnVars (5.7s)
+✔ [9101/9384] Built RealRooted.Mathlib.RingTheory.Polynomial.Pochhammer (6.3s)
+✔ [9102/9389] Built RealRooted.Mathlib.LinearAlgebra.Matrix.Gaussian (9.5s)
+✔ [9103/9391] Built RealRooted.Mathlib.Algebra.LinearRecurrence.Operator (6.5s)
+✔ [9104/9391] Built RealRooted.DegreeDropReversal (7.2s)
+✔ [9105/9391] Built RealRooted.Mathlib.LinearAlgebra.Matrix.SignVariation (13s)
+✔ [9106/9391] Built RealRooted.RootMultiplicityMatching (7.8s)
+✔ [9107/9392] Built RealRooted.Mathlib.RingTheory.MvPolynomial.Symmetric (7.7s)
+✔ [9108/9392] Built RealRooted.RootSumBounds (9.5s)
+✔ [9109/9392] Built RealRooted.Mathlib.RingTheory.PowerSeries.CausalFwdDiff (3.9s)
+✔ [9110/9392] Built RealRooted.Mathlib.Algebra.MvPolynomial.PDeriv (4.9s)
+✔ [9111/9392] Built RealRooted.Mathlib.Algebra.MvPolynomial.Degrees (3.5s)
+✔ [9112/9392] Built RealRooted.Mathlib.Analysis.Complex.OpenMapping (7.6s)
+✔ [9113/9396] Built RealRooted.NewtonAux (14s)
+✔ [9114/9405] Built RealRooted.MultivariateStability (10s)
+✔ [9116/9410] Built RealRooted.EulerOperator.Darboux.Basic (8.2s)
+✔ [9117/9410] Built RealRooted.RectangularConvolution (6.7s)
+✔ [9118/9410] Built RealRooted.Mathlib.Algebra.Polynomial.CayleyTransform.Basic (7.1s)
+✔ [9119/9410] Built RealRooted.Mathlib.Algebra.MvPolynomial.Stability.DegreeBox (4.9s)
+✔ [9120/9410] Built RealRooted.ThreeTermRecurrence.Coefficients (6.2s)
+✔ [9121/9410] Built RealRooted.Mathlib.Algebra.MvPolynomial.Equiv (5.8s)
+✔ [9122/9410] Built RealRooted.RecurrenceSpace.Operators (5.3s)
+✔ [9123/9410] Built RealRooted.SameDegreeMultiplicityLowerCount (14s)
+✔ [9124/9410] Built RealRooted.Touchard (6.3s)
+✔ [9125/9410] Built RealRooted.Mathlib.LinearAlgebra.Matrix.TotallyNonneg.Closure (3.0s)
+✔ [9126/9410] Built RealRooted.Mathlib.Algebra.MvPolynomial.Nonnegative (4.1s)
+✔ [9127/9410] Built RealRooted.RootCountLocalConstancy (4.0s)
+✔ [9128/9410] Built RealRooted.Basic.ProperPosition (8.7s)
+✔ [9129/9410] Built RealRooted.Mathlib.LinearAlgebra.Matrix.KernelSignVariation (6.4s)
+✔ [9130/9410] Built RealRooted.Mathlib.LinearAlgebra.Matrix.SignRegularStrictification (8.0s)
+✔ [9131/9410] Built RealRooted.Mathlib.LinearAlgebra.Matrix.SignVariationTopology (6.9s)
+✔ [9132/9410] Built RealRooted.Multiaffine (5.3s)
+✔ [9133/9410] Built RealRooted.SamePhaseStability (4.6s)
+✔ [9134/9410] Built RealRooted.Mathlib.Analysis.Complex.Polynomial.ClosedRoots (5.7s)
+✔ [9135/9410] Built RealRooted.ASWKarlinVectors (7.1s)
+✔ [9136/9410] Built RealRooted.Mathlib.LinearAlgebra.Matrix.VariationDiminishing (8.7s)
+✔ [9137/9410] Built RealRooted.RecurrenceSpace.Filtered (4.0s)
+✔ [9138/9410] Built RealRooted.QuadraticRoot (19s)
+✔ [9139/9410] Built RealRooted.Mathlib.Algebra.Polynomial.MobiusTransform (5.9s)
+✔ [9140/9410] Built RealRooted.DerivativeRecurrence.General (11s)
+✔ [9141/9410] Built RealRooted.Basic (3.9s)
+✔ [9142/9410] Built RealRooted.PositiveParameterLocalLowerCount (4.2s)
+✔ [9143/9410] Built RealRooted.Multiaffine.Reciprocal (3.9s)
+✔ [9144/9410] Built RealRooted.OrderedRoots (4.9s)
+✔ [9145/9410] Built RealRooted.SamePhaseStability.Nonnegative (4.3s)
+✔ [9146/9410] Built RealRooted.Apolarity (20s)
+✔ [9147/9410] Built RealRooted.Mathlib.LinearAlgebra.Matrix.SignRegularVariation (4.5s)
+✔ [9148/9410] Built RealRooted.LiebSokalOperator (6.0s)
+✔ [9149/9410] Built RealRooted.RecurrenceSpace.Defect (4.6s)
+✔ [9150/9410] Built RealRooted.Mathlib.Algebra.Polynomial.CayleyTransform.Bernstein (3.9s)
+✔ [9151/9410] Built RealRooted.Mathlib.Algebra.Polynomial.CayleyTransform.Algebra (4.6s)
+✔ [9152/9410] Built RealRooted.BasisTransform (6.4s)
+✔ [9153/9410] Built RealRooted.ASWKarlinSineBounds (9.3s)
+✔ [9154/9410] Built RealRooted.SymmetricDecomposition.Definitions (6.7s)
+✔ [9155/9410] Built RealRooted.Transforms.BrandenE.OrderedBell (7.1s)
+✔ [9156/9410] Built RealRooted.SimpleRoots (7.1s)
+✔ [9157/9410] Built RealRooted.SequenceClosure (7.6s)
+✔ [9158/9410] Built RealRooted.HermiteBiehler.Basic (7.7s)
+✔ [9159/9410] Built RealRooted.AissenSchoenbergWhitneyBase (8.2s)
+✔ [9160/9410] Built RealRooted.Interlacing.Multiplicity (8.3s)
+✔ [9161/9410] Built RealRooted.Derivative.Algebra (7.9s)
+✔ [9162/9410] Built RealRooted.LiebSokalOperator.Linearity (5.7s)
+✔ [9163/9410] Built RealRooted.Compatibility.Pair (9.3s)
+✔ [9164/9410] Built RealRooted.PartialSymmetrization (14s)
+✔ [9165/9410] Built RealRooted.Linear (10s)
+✔ [9166/9410] Built RealRooted.DegreeDropDivXPrec (11s)
+✔ [9167/9410] Built RealRooted.Mathlib.LinearAlgebra.Matrix.SignRegularRankDeficient (9.7s)
+✔ [9168/9410] Built RealRooted.SmallPositiveParameterCount (10s)
+✔ [9169/9410] Built RealRooted.LiebSokalPointwise (10s)
+✔ [9170/9410] Built RealRooted.SignEvaluation (11s)
+✔ [9171/9410] Built RealRooted.DifferentialBlocks (6.6s)
+✔ [9172/9410] Built RealRooted.Mathlib.Algebra.Polynomial.CayleyTransform.BernsteinBasisTransform (6.9s)
+✔ [9173/9410] Built RealRooted.Transforms.BrandenE.Basic (7.2s)
+✔ [9174/9410] Built RealRooted.HermiteBiehler.LogDerivative (6.7s)
+✔ [9175/9410] Built RealRooted.DerivativeRecurrence.Nonnegative (5.7s)
+✔ [9176/9410] Built RealRooted.DerivativeRecurrence.ScalarRecInvariantCone (15s)
+✔ [9177/9410] Built RealRooted.Derivative.RootCounting (6.3s)
+✔ [9178/9410] Built RealRooted.ASWKarlinMatrix (7.1s)
+✔ [9179/9410] Built RealRooted.PolynomialValueEulerNumerator (7.0s)
+✔ [9180/9410] Built RealRooted.ElementaryDifferential (6.3s)
+✔ [9181/9410] Built RealRooted.BernsteinCone (8.6s)
+✔ [9182/9410] Built RealRooted.HermiteBiehler.OddEven (7.8s)
+✔ [9183/9410] Built RealRooted.LiebSokal (3.1s)
+✔ [9184/9410] Built RealRooted.PosCombo.Degree (4.7s)
+✔ [9185/9410] Built RealRooted.WagnerX.ListInterlacing (5.9s)
+✔ [9186/9410] Built RealRooted.RootContinuity (5.0s)
+✔ [9187/9410] Built RealRooted.ASWKarlinVariation (3.0s)
+✔ [9188/9410] Built RealRooted.Transforms.BrandenE.Inverse (4.1s)
+✔ [9189/9410] Built RealRooted.Bezoutian.StrictInterleaving (7.2s)
+✔ [9190/9410] Built RealRooted.GraceHalfPlane (16s)
+✔ [9191/9410] Built RealRooted.RootOrderBridge (40s)
+✔ [9192/9410] Built RealRooted.Derivative.Interlacing (6.1s)
+✔ [9193/9410] Built RealRooted.DegreeIncreasingLocalLowerCount (27s)
+✔ [9194/9410] Built RealRooted.ProductSequence.Interlacing (4.1s)
+✔ [9195/9410] Built RealRooted.WagnerX.NonnegativeRoots (4.3s)
+✔ [9196/9410] Built RealRooted.RootCountJump (4.6s)
+✔ [9197/9410] Built RealRooted.ASWKarlinKernel (4.2s)
+✔ [9198/9410] Built RealRooted.ObreschkoffContinuity (5.0s)
+✔ [9199/9410] Built RealRooted.Derivative.FamilyClosure (2.6s)
+✔ [9200/9410] Built RealRooted.WagnerX.AffineFactors (2.9s)
+✔ [9201/9410] Built RealRooted.Polarization (6.6s)
+✔ [9202/9410] Built RealRooted.Bezoutian.MatrixBasics (6.0s)
+✔ [9203/9410] Built RealRooted.Derivative (2.1s)
+✔ [9204/9410] Built RealRooted.SuccDegreeRootCrossing (5.7s)
+✔ [9205/9410] Built RealRooted.WagnerX (2.1s)
+✔ [9206/9410] Built RealRooted.LiuOppositeSigns.RootCount (4.8s)
+✔ [9207/9410] Built RealRooted.Tactic.Product.Interlacing (6.2s)
+✔ [9208/9410] Built RealRooted.Interlacing.Residue (3.1s)
+✔ [9209/9410] Built RealRooted.Transforms.BrandenE.BasisImage (3.6s)
+✔ [9210/9410] Built RealRooted.InterlacingSequenceBasic (3.2s)
+✔ [9211/9410] Built RealRooted.LiuOppositeSigns.RootDeletion (3.1s)
+✔ [9212/9410] Built RealRooted.Bezoutian.RootEvaluation (4.7s)
+✔ [9213/9410] Built RealRooted.WagnerRightSum.Sign (4.0s)
+✔ [9214/9410] Built RealRooted.RectangularPolarization (5.6s)
+✔ [9215/9410] Built RealRooted.HermiteBiehler.Forward (3.5s)
+✔ [9216/9410] Built RealRooted.LiuOppositeSigns.PositiveSplitRootCount (3.1s)
+✔ [9217/9410] Built RealRooted.Tactic.SideGoals (6.0s)
+✔ [9218/9410] Built RealRooted.Bezoutian.ComplexRoots (3.4s)
+✔ [9219/9410] Built RealRooted.AissenSchoenbergWhitney (7.9s)
+✔ [9220/9410] Built RealRooted.CubicDiscriminant (36s)
+✔ [9221/9410] Built RealRooted.RectangularPolarizationComplement (4.8s)
+✔ [9222/9410] Built RealRooted.WagnerRightSum (5.5s)
+✔ [9223/9410] Built RealRooted.Tactic.Recurrence.Shape (9.8s)
+✔ [9224/9410] Built RealRooted.Bezoutian.WronskianConverse (3.9s)
+✔ [9225/9410] Built RealRooted.AffineFamily.Basic (2.5s)
+✔ [9226/9410] Built RealRooted.Wagner.LeftSum (2.8s)
+✔ [9227/9410] Built RealRooted.Interlacing.NegativeRoots (2.7s)
+✔ [9228/9410] Built RealRooted.Bezoutian.LowDegree (2.1s)
+✔ [9229/9410] Built RealRooted.Wagner (1.7s)
+✔ [9230/9410] Built RealRooted.CoefficientShape (6.5s)
+✔ [9231/9410] Built RealRooted.AffineFamily.PositiveFamily (2.5s)
+✔ [9232/9410] Built RealRooted.WeightedSum (2.4s)
+✔ [9233/9410] Built RealRooted.RectangularConvolutionIdentity (5.7s)
+✔ [9234/9410] Built RealRooted.CombinatorialExamples.Common (1.9s)
+✔ [9235/9410] Built RealRooted.Tactic.Recurrence.Eval (5.1s)
+✔ [9236/9410] Built RealRooted.CubicNewton (1.9s)
+✔ [9237/9410] Built RealRooted.Wronskian.Forward (3.6s)
+✔ [9238/9410] Built RealRooted.MaWang.CountBounds (4.3s)
+✔ [9239/9410] Built RealRooted.MaWang.StrictSigns.RootSigns (2.4s)
+✔ [9240/9410] Built RealRooted.Tactic.Recurrence.ODE (4.7s)
+✔ [9241/9410] Built RealRooted.AffineDerivative (8.7s)
+✔ [9242/9410] Built RealRooted.MaWang.StrictSigns.Assembly (2.5s)
+✔ [9243/9410] Built RealRooted.MaWang.StrictSigns (1.1s)
+✔ [9244/9410] Built RealRooted.Interlacing.RootCountSigns (1.8s)
+✔ [9245/9410] Built RealRooted.Tactic.Recurrence.LinRecProbe (5.2s)
+✔ [9246/9410] Built RealRooted.MaWang.Strong (2.5s)
+✔ [9247/9410] Built RealRooted.DerivativeRecurrence.QuadraticLagStrict (1.6s)
+✔ [9248/9410] Built RealRooted.MaWang.Weak.Regularization (3.0s)
+✔ [9249/9410] Built RealRooted.MaWang.Weak.Successor (3.4s)
+✔ [9250/9410] Built RealRooted.Tactic.Recurrence.RowSide (8.2s)
+✔ [9251/9410] Built RealRooted.MaWang.Weak.DerivativeSign (1.4s)
+✔ [9252/9410] Built RealRooted.MaWang.CriticalSign (1.6s)
+✔ [9253/9410] Built RealRooted.LiuWang.CombinedFlux (1.8s)
+✔ [9254/9410] Built RealRooted.LiuWang.General (1.7s)
+✔ [9255/9410] Built RealRooted.LiuWang.FiniteFamily (1.8s)
+✔ [9256/9410] Built RealRooted.MaWang.Weak.Endpoint (1.6s)
+✔ [9257/9410] Built RealRooted.Tactic.Recurrence.LeadingCoeff (5.9s)
+✔ [9258/9410] Built RealRooted.LiuWangRecursion (1.8s)
+✔ [9259/9410] Built RealRooted.DerivativeRecurrence.LagWeak (1.0s)
+✔ [9260/9410] Built RealRooted.MaWang.Weak (1.1s)
+✔ [9261/9410] Built RealRooted.MaWang.DerivativeCore (1.2s)
+✔ [9262/9410] Built RealRooted.MaWang (1.1s)
+✔ [9263/9410] Built RealRooted.Tactic.Recurrence.LinRec (10s)
+✔ [9264/9410] Built RealRooted.ThreeTermRecurrence.Interlacing (2.3s)
+✔ [9265/9410] Built RealRooted.MaWang.DerivativeStep (2.9s)
+✔ [9266/9410] Built RealRooted.RootCounting.SignChanges (2.9s)
+✔ [9267/9410] Built RealRooted.HermiteBiehler.ConverseLowDegree (3.0s)
+✔ [9268/9410] Built RealRooted.Interlacing.Euclid (2.7s)
+✔ [9269/9410] Built RealRooted.ThreeTermRecurrence.HalfGrowth (3.1s)
+✔ [9270/9410] Built RealRooted.HermiteBiehler.Converse.RootGeometry (2.0s)
+✔ [9271/9410] Built RealRooted.EulerOperator.Darboux.NegativeRoots (3.5s)
+✔ [9272/9410] Built RealRooted.IteratedDerivativeShift (6.7s)
+✔ [9273/9410] Built RealRooted.PosCombo (6.9s)
+✔ [9274/9410] Built RealRooted.DerivativeRecurrence.Interlacing (4.0s)
+✔ [9275/9410] Built RealRooted.HermiteBiehler.Converse.Wronskian (2.1s)
+✔ [9276/9410] Built RealRooted.AllCombo (2.6s)
+✔ [9277/9410] Built RealRooted.CommonInterleaver.PairBridge.Reduction.CommonRoot (2.8s)
+✔ [9278/9410] Built RealRooted.Tactic.Row.HalfDegree (2.6s)
+✔ [9279/9410] Built RealRooted.SameDegreeDerivative (2.8s)
+✔ [9280/9410] Built RealRooted.DerivativeRecurrence.FiniteLagCoefficients (2.6s)
+✔ [9281/9410] Built RealRooted.CommonInterleaver.RootDesc (3.4s)
+✔ [9282/9410] Built RealRooted.SuccDegreeLeftEndpoint (3.8s)
+✔ [9283/9410] Built RealRooted.DerivativeRecurrence.QuadraticInterlacing (3.8s)
+✔ [9284/9410] Built RealRooted.Tactic.InterlacesExplicit (7.1s)
+✔ [9285/9410] Built RealRooted.ObreschkoffConverse.DegreeGap (3.3s)
+✔ [9286/9410] Built RealRooted.PFPolynomial (5.8s)
+✔ [9287/9410] Built RealRooted.CommonInterleaver.RootSlots.Basic (2.6s)
+✔ [9288/9410] Built RealRooted.DerivativeRecurrence.RootWindow (3.5s)
+✔ [9289/9410] Built RealRooted.SameDegreeQuadraticObstruction (6.7s)
+✔ [9290/9410] Built RealRooted.Transforms.BrandenE.ProperPosition (2.1s)
+✔ [9291/9410] Built RealRooted.CommonInterleaver.RootSlots (2.4s)
+✔ [9292/9410] Built RealRooted.SameDegreeQuadraticRootCount (3.6s)
+✔ [9293/9410] Built RealRooted.ObreschkoffConverse.Regularization (4.9s)
+✔ [9294/9410] Built RealRooted.CommonInterleaver.Finite (2.7s)
+✔ [9295/9410] Built RealRooted.MultiplierSequence (5.9s)
+✔ [9296/9410] Built RealRooted.CommonInterleaver.Sequence (1.8s)
+✔ [9297/9410] Built RealRooted.SameDegreeCubicRootCount (3.7s)
+✔ [9298/9410] Built RealRooted.ObreschkoffConverse.Converse (3.8s)
+✔ [9299/9410] Built RealRooted.CommonInterleaver.DescPolynomial (1.7s)
+✔ [9300/9410] Built RealRooted.Hadamard.Product (2.0s)
+✔ [9301/9410] Built RealRooted.CommonInterleaver.FamilyUpgrade (1.9s)
+✔ [9302/9410] Built RealRooted.ObreschkoffConverse.Forward (3.1s)
+✔ [9303/9410] Built RealRooted.CommonInterleaverSeq (1.5s)
+✔ [9304/9410] Built RealRooted.Hadamard.Basic (3.8s)
+✔ [9305/9410] Built RealRooted.ObreschkoffConverse.Derivative (1.9s)
+✔ [9306/9410] Built RealRooted.CommonInterleaver.IntervalLemmas (1.3s)
+✔ [9307/9410] Built RealRooted.ProductFamily (2.3s)
+✔ [9308/9410] Built RealRooted.ObreschkoffConverse (1.5s)
+✔ [9309/9410] Built RealRooted.FiniteFreeMultiplicative (3.4s)
+✔ [9310/9410] Built RealRooted.Hadamard.Finite (3.7s)
+✔ [9311/9410] Built RealRooted.OperatorPreservesInterlacing (2.1s)
+✔ [9312/9410] Built RealRooted.EulerOperator (2.8s)
+✔ [9313/9410] Built RealRooted.Interlacing.OuterDifference (2.0s)
+✔ [9314/9410] Built RealRooted.GeneralizedEulerian (3.3s)
+✔ [9315/9410] Built RealRooted.FolkloreLemma (3.5s)
+✔ [9316/9410] Built RealRooted.Interlacing.PencilPreserver (2.5s)
+✔ [9317/9410] Built RealRooted.Interlacing.ResidueCriterion (2.3s)
+✔ [9318/9410] Built RealRooted.Wronskian.Algebra (2.6s)
+✔ [9319/9410] Built RealRooted.Hadamard.Newton (4.2s)
+✔ [9320/9410] Built RealRooted.AffineFamily.Boundary (2.8s)
+✔ [9321/9410] Built RealRooted.Interlacing.RootDeletionExpansion (2.4s)
+✔ [9322/9410] Built RealRooted.Hadamard.Cubic (3.2s)
+✔ [9323/9410] Built RealRooted.AffineFamily.LowDegree (4.6s)
+✔ [9324/9410] Built RealRooted.EulerBidiagonal.Basic (5.8s)
+✔ [9325/9410] Built RealRooted.AffineFamily.RootCrossing (5.6s)
+✔ [9326/9410] Built RealRooted.SymmetricDecomposition.FPolynomial (8.0s)
+✔ [9327/9410] Built RealRooted.EulerBidiagonal.VaryingRows (1.4s)
+✔ [9328/9410] Built RealRooted.Hadamard.Grace (4.5s)
+✔ [9329/9410] Built RealRooted.EulerBidiagonal (1.2s)
+✔ [9330/9410] Built RealRooted.AffineFamily.Wronskian (2.4s)
+✔ [9331/9410] Built RealRooted.EulerBidiagonal.General (3.2s)
+✔ [9332/9410] Built RealRooted.AffineFamily (3.9s)
+✔ [9333/9410] Built RealRooted.EulerBidiagonal.ComparisonData (1.5s)
+✔ [9334/9410] Built RealRooted.CommonInterleaver.AffineBoundary (1.5s)
+✔ [9335/9410] Built RealRooted.Compatibility.Basic (2.0s)
+✔ [9336/9410] Built RealRooted.SymmetricDecomposition.FPolynomialInterlacing (2.6s)
+✔ [9337/9410] Built RealRooted.EulerBidiagonal.Location (3.1s)
+✔ [9338/9410] Built RealRooted.Compatibility.InterleaverBridge (1.5s)
+✔ [9339/9410] Built RealRooted.CommonInterleaver.SuccDegreeEndpoint (2.3s)
+✔ [9340/9410] Built RealRooted.CommonInterleaver.SameDegreeRootCount (4.0s)
+✔ [9341/9410] Built RealRooted.EulerBidiagonal.PairStep (1.6s)
+✔ [9342/9410] Built RealRooted.SymmetricDecomposition.Decomposition (2.3s)
+✔ [9343/9410] Built RealRooted.EulerBidiagonal.PairTheorem (2.4s)
+✔ [9344/9410] Built RealRooted.CommonInterleaver.RootCountCombinatorics (3.0s)
+✔ [9345/9410] Built RealRooted.SymmetricDecomposition.Theorem26 (3.3s)
+✔ [9346/9410] Built RealRooted.EulerBidiagonal.GeneralRows (1.2s)
+✔ [9347/9410] Built RealRooted.SymmetricDecomposition (1.2s)
+✔ [9348/9410] Built RealRooted.EulerBidiagonal.DepRows (1.3s)
+✔ [9349/9410] Built RealRooted.CommonInterleaver.RightPencil (2.8s)
+✔ [9350/9410] Built RealRooted.EulerBidiagonal.ZeroParameter (1.6s)
+✔ [9351/9410] Built RealRooted.GammaTransform.Basic (3.5s)
+✔ [9352/9410] Built RealRooted.CommonInterleaver.SuccDegreeLowDegree (3.5s)
+✔ [9353/9410] Built RealRooted.GammaTransform.Derivative (2.5s)
+✔ [9354/9410] Built RealRooted.GammaTransform.RootMap (2.8s)
+✔ [9355/9410] Built RealRooted.GammaTransform.RootLists (2.3s)
+✔ [9356/9410] Built RealRooted.HermiteBiehler.Converse (3.9s)
+✔ [9357/9410] Built RealRooted.SameDegreeCountFromAnalytic (8.2s)
+✔ [9358/9410] Built RealRooted.Tactic.Recurrence.Coefficients (6.4s)
+✔ [9359/9410] Built RealRooted.HermiteBiehler.StablePencil (1.7s)
+✔ [9360/9410] Built RealRooted.HermiteBiehler.Hurwitz (3.5s)
+✔ [9361/9410] Built RealRooted.Mesh.Basic (2.3s)
+✔ [9362/9410] Built RealRooted.LiuOppositeSigns.PositiveSplitPair (3.6s)
+✔ [9363/9410] Built RealRooted.GammaTransform.Preservation (7.5s)
+✔ [9364/9410] Built RealRooted.HermiteBiehler (2.4s)
+✔ [9365/9410] Built RealRooted.GammaTransform.ProperPosition (1.9s)
+✔ [9366/9410] Built RealRooted.Tactic.Recurrence.Degree (6.6s)
+✔ [9367/9410] Built RealRooted.GammaTransform (1.1s)
+✔ [9368/9410] Built RealRooted.SamePhaseInterlacing (2.6s)
+✔ [9369/9410] Built RealRooted.GammaRealRoots (1.4s)
+✔ [9370/9410] Built RealRooted.Tactic.Recurrence (3.5s)
+✔ [9371/9410] Built RealRooted.PFPolynomial.Closure (3.3s)
+✔ [9372/9410] Built RealRooted.NarayanaTransformation.RootGeometry (3.8s)
+✔ [9373/9410] Built RealRooted.CommonInterleaver.PairBridge.SuccDegree.ClosedSegment (4.4s)
+✔ [9374/9410] Built RealRooted.CommonInterleaver.PairBridge.SuccDegree (1.4s)
+✔ [9375/9410] Built RealRooted.CommonInterleaver.PairBridge.SuccDegree.SlotData (3.1s)
+✔ [9376/9410] Built RealRooted.Mesh.FiniteDifference (5.3s)
+✔ [9377/9410] Built RealRooted.Tactic.Recurrence.Cancel (11s)
+✔ [9378/9410] Built RealRooted.CommonInterleaver.PairBridge.Reduction.CommonInterleaver (1.3s)
+✔ [9379/9410] Built RealRooted.Tactic.RowClosedForm (8.9s)
+✔ [9380/9410] Built RealRooted.CommonInterleaver.PairBridge.Compatibility (1.4s)
+✔ [9381/9410] Built RealRooted.Mesh.DiscreteMultiplier (3.4s)
+✔ [9382/9410] Built RealRooted.CommonInterleaver.PairBridge.Compatibility.NonnegativeShift (3.1s)
+✔ [9383/9410] Built RealRooted.CommonInterleaver.PairBridge (1.4s)
+✔ [9384/9410] Built RealRooted.Mesh.FallingFactorial (4.3s)
+✔ [9385/9410] Built RealRooted.CommonInterleaver.PairwiseUpgrade (1.2s)
+✔ [9386/9410] Built RealRooted.Tactic.Row.SideGoals (7.0s)
+✔ [9387/9410] Built RealRooted.CommonInterleaver.PairwiseUpgrade.FamilyCompatibility (1.3s)
+✔ [9388/9410] Built RealRooted.CommonInterleaver.PairwiseUpgrade.FourWay (1.4s)
+✔ [9389/9410] Built RealRooted.Tactic.Row.Support (3.5s)
+✔ [9390/9410] Built RealRooted.CommonInterleaverTwo (1.5s)
+✔ [9391/9410] Built RealRooted.CommonInterleaver.PairwiseUpgrade.FourWay.Equivalences (1.5s)
+✔ [9392/9410] Built RealRooted.ChudnovskySeymour.Core (2.6s)
+✔ [9393/9410] Built RealRooted.Tactic.Row.Subseq (7.9s)
+✔ [9394/9410] Built RealRooted.BernsteinCone.Preserver (1.6s)
+✔ [9395/9410] Built RealRooted.LiuOppositeSigns.JensenRootCount (2.6s)
+✔ [9396/9410] Built RealRooted.Transforms.BrandenE.IntervalPreserver (1.3s)
+✔ [9397/9410] Built RealRooted.Tactic.Row.Core (10s)
+✔ [9398/9410] Built RealRooted.FiniteFreeRootCount (3.3s)
+✔ [9399/9410] Built RealRooted.Tactic.Row.LowerOrder (3.3s)
+✔ [9400/9410] Built RealRooted.Transforms.BrandenE.Interlacing (3.3s)
+✔ [9401/9410] Built RealRooted.PolynomialValueEulerNumerator.Interlacing (3.2s)
+✔ [9402/9410] Built RealRooted.Tactic.Row.DerivLag (8.6s)
+✔ [9403/9410] Built RealRooted.Tactic.Row.Frontend (9.9s)
+✔ [9404/9410] Built RealRooted.CombinatorialExamples.TypeBEulerian (9.8s)
+✔ [9405/9410] Built TypeBEulerian.Basic (4.2s)
+✔ [9406/9410] Built TypeBEulerian.EulerNumerator (3.3s)
+✔ [9407/9410] Built TypeBEulerian.CommonInterlacer (3.8s)
+✔ [9408/9410] Built TypeBEulerian.MainTheorem (3.2s)
+✔ [9409/9410] Built TypeBEulerian (2.7s)
+Build completed successfully (9410 jobs).
+EXIT_CODE=0 WALL_SECONDS=253
+
+$ lake env lean --trust=0 Verification.lean  # output also saved to .build/kernel-check.log
+@TypeBEulerianVerification.real_rooted : ∀ {P : ℕ → ℝ[X]},
+  TypeBEulerianVerification.IsTypeBEulerian P →
+    ∀ (L : ℝ[X] →ₗ[ℝ] ℝ[X]),
+      (∀ (m : ℕ), L (X ^ m) = P m) →
+        ∀ (n : ℕ) (c : Fin (n + 1) → ℝ),
+          (∀ (k : Fin (n + 1)), 0 ≤ c k) → c ≠ 0 → (L (∑ k, c k • (X ^ (n - ↑k) * (1 + X) ^ ↑k))).Splits
+@TypeBEulerianVerification.real_rooted_strong : ∀ {P : ℕ → ℝ[X]},
+  TypeBEulerianVerification.IsTypeBEulerian P →
+    ∀ (L : ℝ[X] →ₗ[ℝ] ℝ[X]),
+      (∀ (m : ℕ), L (X ^ m) = P m) →
+        ∀ (n : ℕ) (c : Fin (n + 1) → ℝ),
+          (∀ (k : Fin (n + 1)), 0 ≤ c k) →
+            c ≠ 0 →
+              have p := L (∑ k, c k • (X ^ (n - ↑k) * (1 + X) ^ ↑k));
+              p ≠ 0 ∧ p.Splits ∧ p.natDegree = n ∧ p.roots.card = n ∧ ∀ r ∈ p.roots, r < 0
+TypeBEulerianVerification.zero_vector : ∀ (L : ℝ[X] →ₗ[ℝ] ℝ[X]) (n : ℕ), L (∑ k, 0 • (X ^ (n - ↑k) * (1 + X) ^ ↑k)) = 0
+@TypeBEulerianVerification.degree_zero : ∀ {P : ℕ → ℝ[X]},
+  TypeBEulerianVerification.IsTypeBEulerian P →
+    ∀ (L : ℝ[X] →ₗ[ℝ] ℝ[X]),
+      (∀ (m : ℕ), L (X ^ m) = P m) → ∀ (c : Fin 1 → ℝ), L (∑ k, c k • (X ^ (0 - ↑k) * (1 + X) ^ ↑k)) = C (c 0)
+@TypeBEulerianVerification.basis_image : ∀ {P : ℕ → ℝ[X]},
+  TypeBEulerianVerification.IsTypeBEulerian P →
+    ∀ (L : ℝ[X] →ₗ[ℝ] ℝ[X]),
+      (∀ (m : ℕ), L (X ^ m) = P m) →
+        ∀ {n k : ℕ}, k ≤ n → L (X ^ (n - k) * (1 + X) ^ k) = ∑ j ∈ Finset.range (k + 1), ↑(k.choose j) • P (n - j)
+TypeBEulerianVerification.sequence_exists : ∃ P,
+  TypeBEulerianVerification.IsTypeBEulerian P ∧ P 1 = 1 + X ∧ P 2 = 1 + 6 * X + X ^ 2
+@TypeBEulerianVerification.map_exists : ∀ {P : ℕ → ℝ[X]},
+  TypeBEulerianVerification.IsTypeBEulerian P → ∃ L, ∀ (m : ℕ), L (X ^ m) = P m
+TypeBEulerian.mathcalB_coneInput_splits : ∀ (n : ℕ) (c : Fin (n + 1) → ℝ),
+  (∀ (k : Fin (n + 1)), 0 ≤ c k) → c ≠ 0 → (TypeBEulerian.mathcalB (∑ k, c k • (X ^ (n - ↑k) * (1 + X) ^ ↑k))).Splits
+TypeBEulerian.mathcalB_coneInput_realRooted : ∀ (n : ℕ) (c : Fin (n + 1) → ℝ),
+  (∀ (k : Fin (n + 1)), 0 ≤ c k) →
+    c ≠ 0 →
+      TypeBEulerian.mathcalB (TypeBEulerian.coneInput n c) ≠ 0 ∧
+        (TypeBEulerian.mathcalB (TypeBEulerian.coneInput n c)).Splits ∧
+          (TypeBEulerian.mathcalB (TypeBEulerian.coneInput n c)).natDegree = n ∧
+            (TypeBEulerian.mathcalB (TypeBEulerian.coneInput n c)).roots.card = n ∧
+              ∀ r ∈ (TypeBEulerian.mathcalB (TypeBEulerian.coneInput n c)).roots, r < 0
+'TypeBEulerianVerification.real_rooted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerianVerification.real_rooted_strong' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerianVerification.zero_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerianVerification.degree_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerianVerification.basis_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerianVerification.sequence_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerianVerification.map_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerian.mathcalB_coneInput_splits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerian.mathcalB_coneInput_realRooted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerian.mathcalB_coneInput_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerian.mathcalB_coneInput_n_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypeBEulerian.b_eval_mul_derivative_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_CODE=0 WALL_SECONDS=4
+
+$ python3 scripts/audit.py axioms .build/kernel-check.log
+PASS: TypeBEulerian.b_eval_mul_derivative_nonpos uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerian.mathcalB_coneInput_n_zero uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerian.mathcalB_coneInput_realRooted uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerian.mathcalB_coneInput_splits uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerian.mathcalB_coneInput_zero uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerianVerification.basis_image uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerianVerification.degree_zero uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerianVerification.map_exists uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerianVerification.real_rooted uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerianVerification.real_rooted_strong uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerianVerification.sequence_exists uses exactly Classical.choice, Quot.sound, propext
+PASS: TypeBEulerianVerification.zero_vector uses exactly Classical.choice, Quot.sound, propext
+PASS: no sorryAx, native_decide axiom, or project-specific axiom in any audited theorem.
+EXIT_CODE=0 WALL_SECONDS=0
+
+$ date -u +%Y-%m-%dT%H:%M:%SZ
+2026-11-16T00:10:49Z
+EXIT_CODE=0 WALL_SECONDS=0
+
+FULL_REBUILD=PASS
+REAL_ROOTED=PASS
+STRONG_FORM=PASS
+ZERO_AND_DEGREE_ZERO_CASES=PASS
+BASIS_IMAGES=PASS
+NON_VACUOUS_HYPOTHESES=PASS
+AXIOM_AUDIT=PASS
+TRUST_MODEL=kernel-only (propext, Classical.choice, Quot.sound)
+
+$ python3 scripts/audit.py record 0 2026-11-16T00:06:32Z 2026-11-16T00:10:49Z
+fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+Wrote .build/verification.json
+EXIT_CODE=0 WALL_SECONDS=0
+
+VERIFY_EXIT_CODE=0

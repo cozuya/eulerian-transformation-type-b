@@ -1,0 +1,17 @@
+# Downloaded tools and dependency checkouts
+/.tools/
+/.lake/
+# Generated local verification output; reviewed evidence is copied to evidence/.
+/.build/
+# Local review configuration
+/.crbuddy/
+# Compiled and editor products
+*.olean
+*.ilean
+*.olean.private
+*.olean.server
+*.c.o
+__pycache__/
+*.pyc
+.DS_Store
+*~

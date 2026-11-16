@@ -1,0 +1,62 @@
+{
+ "B": {
+  "all_basis_images_real_rooted": true,
+  "rows_pairwise_interlacing_consistent_direction": true,
+  "row(n-1,k)_interlaces_row(n,k)": true,
+  "directions_seen_last_rows": [
+   [
+    16,
+    [
+     "g<=f"
+    ]
+   ],
+   [
+    17,
+    [
+     "g<=f"
+    ]
+   ],
+   [
+    18,
+    [
+     "g<=f"
+    ]
+   ]
+  ]
+ },
+ "DB": {
+  "all_basis_images_real_rooted": true,
+  "rows_pairwise_interlacing_consistent_direction": true,
+  "row(n-1,k)_interlaces_row(n,k)": true,
+  "directions_seen_last_rows": [
+   [
+    16,
+    [
+     "g<=f"
+    ]
+   ],
+   [
+    17,
+    [
+     "g<=f"
+    ]
+   ],
+   [
+    18,
+    [
+     "g<=f"
+    ]
+   ]
+  ]
+ },
+ "cayley_recurrences": {
+  "beta(n,k+1) = beta(n,k) + (1+z) beta(n-1,k)": true,
+  "beta(n+1,k) = T_B beta(n,k) - 2k(z^2-1) beta(n-1,k-1)": true
+ },
+ "x_recurrences": {
+  "b(n,k+1) = b(n,k) + b(n-1,k)": true,
+  "b(n+1,k) = (1+(2n+1)x) b(n,k) + 2x(1-x) b(n,k)' - 2k x b(n-1,k-1)": true
+ },
+ "n_max": 18,
+ "seconds": 20.7
+}
